@@ -16,6 +16,39 @@
                 </p>
             </field>
         </record>
+	
+	<record model="ir.ui.view" id="course_form_view">
+            <field name="name">course.form</field>
+            <field name="model">openacademy.course</field>
+            <field name="arch" type="xml">
+                <form string="Course Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+			<notebook>
+				<page string="Description">
+					<field name="description"/>
+				</page>
+				<page string="About">
+					Notebook test
+				</page>
+			</notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+	<record model="ir.ui.view" id="course_search_view">
+            <field name="name">course.search</field>
+            <field name="model">openacademy.course</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                </search>
+            </field>
+        </record>
 
         <!-- top level menu: no parent -->
         <menuitem id="main_openacademy_menu" name="Open Academy Navbar"/>
@@ -31,6 +64,6 @@
         <!-- Full id location:
              action="openacademy.course_list_action"
              It is not required when it is the same module -->
-    </data>
+	</data>
 </openerp>
 
