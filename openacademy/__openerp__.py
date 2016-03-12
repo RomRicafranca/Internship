@@ -6,9 +6,9 @@
 
     'description': """
         Open Academy module for managing trainings:
-            - training courses
-            - training sessions
-            - attendees registration
+		-training courses
+		-training sessions
+		-attendees registration
     """,
 
     'author': "Odoo",
@@ -27,6 +27,7 @@
     'data': [
         # 'security/ir.model.access.csv',
         'templates.xml',
+		'views/openacademy.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
