@@ -4,10 +4,10 @@
 - [X] Learn: Install Odoo using source files
 - [X] Learn: GitHub for code repository
 - [X] Complete Tutorial: Building a Module
+- [X] Learn: reStructuredText (rst) for technical documentation
 
 #### In Progress
 - [ ] Draft: Project Schedule
-- [ ] Learn: reStructuredText (rst) for technical documentation
 
 #### To Do
 - [ ] Investigate: Localizing Odoo
