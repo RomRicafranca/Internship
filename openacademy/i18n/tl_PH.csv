@@ -1,0 +1,114 @@
+module,type,name,res_id,src,value
+openacademy,model,"ir.ui.view,arch_db",openacademy.view_openacad_session_kanban,"<br/>
+                                    Start date:","<br/>
+                                    Start date:"
+openacademy,model,"ir.ui.view,arch_db",openacademy.view_openacad_session_kanban,"<br/>
+                                    duration:","<br/>
+                                    duration:"
+openacademy,code,addons/openacademy/models.py,151,A session's instructor can't be an attendee,Ang guro ng sesyon ay hindi pwede sa listahan ng dadalo
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_course_about,About,Tungkol
+openacademy,model,"ir.ui.view,arch_db",openacademy.course_form_view,About,Tungkol
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_active,Active,Aktibo
+openacademy,model,"ir.actions.act_window,name",openacademy.launch_session_wizard,Add Attendees,Magdagdag ng dadalo
+openacademy,model,"ir.ui.view,arch_db",openacademy.wizard_form_view,Add Attendees,Magdagdag ng dadalo
+openacademy,model,"ir.model.fields,field_description",openacademy.field_res_partner_session_ids,Attended Sessions,Dinaluhan na sesyon
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_attendee_ids,Attendees,Mga dadalo
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_wizard_attendee_ids,Attendees,Mga dadalo
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_attendees_count,Attendees count,Bilang ng dadalo
+openacademy,model,"ir.ui.view,arch_db",openacademy.wizard_form_view,Cancel,Kansel
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_color,Color,Kulay
+openacademy,model,"ir.ui.menu,name",openacademy.configuration_menu,Configuration,Setting
+openacademy,model,"ir.ui.view,arch_db",openacademy.session_form_view,Confirm,Pagtiyakin
+openacademy,selection,"openacademy.session,state",0,Confirmed,Tiyak
+openacademy,model,"ir.actions.act_window,name",openacademy.contact_cat_list_action,Contact Tags,Pananda
+openacademy,model,"ir.ui.menu,name",openacademy.contact_cat_menu,Contact Tags,Pananda
+openacademy,model,"ir.actions.act_window,name",openacademy.contact_list_action,Contacts,Tao
+openacademy,model,"ir.ui.menu,name",openacademy.contact_menu,Contacts,Tao
+openacademy,code,addons/openacademy/models.py,25,Copy of {},Kopya ng {}
+openacademy,code,addons/openacademy/models.py,27,Copy of {} ({}),Kopya ng {} ({})
+openacademy,code,addons/openacademy/models.py,23,Copy of {}%,Kopya ng {}%
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_course_id,Course,Kurso
+openacademy,model,"ir.ui.view,arch_db",openacademy.course_form_view,Course Form,Anyo ng Kurso
+openacademy,model,"ir.ui.view,arch_db",openacademy.course_tree_view,Course Tree,Puno ng Kurso
+openacademy,model,"ir.actions.act_window,name",openacademy.course_list_action,Courses,Mga Kurso
+openacademy,model,"ir.ui.menu,name",openacademy.courses_menu,Courses,Mga Curso
+openacademy,model,"ir.actions.act_window,help",openacademy.course_list_action,Create the first course,Gumawa ng unang kurso
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_course_create_uid,Created by,Ginawa ni
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_create_uid,Created by,Ginawa ni
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_wizard_create_uid,Created by,Ginawa ni
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_course_create_date,Created on,Ginawa ng
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_create_date,Created on,Ginawa ng
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_wizard_create_date,Created on,Ginawa ng
+openacademy,model,"ir.ui.view,arch_db",openacademy.view_openacad_session_kanban,Delete,Alisin
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_course_description,Description,Deskripsyon
+openacademy,model,"ir.ui.view,arch_db",openacademy.course_form_view,Description,Deskripsyon
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_course_display_name,Display Name,Pinapakitang pangalan
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_display_name,Display Name,Pinapakitang pangalan
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_wizard_display_name,Display Name,Pinapakitang pangalan
+openacademy,selection,"openacademy.session,state",0,Done,Tapos
+openacademy,selection,"openacademy.session,state",0,Draft,Plano
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_duration,Duration,Gano katagal
+openacademy,model,"ir.model.fields,help",openacademy.field_openacademy_session_duration,Duration in days,Ilang araw ang tagal
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_hours,Duration in hours,Ilang horas ang tagal
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_end_date,End Date,Matatapos ng
+openacademy,model,"ir.ui.view,arch_db",openacademy.session_form_view,General,Kalahatan
+openacademy,model,"ir.ui.view,arch_db",openacademy.course_search_view,Group By,I-grupo ng
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_course_id,ID,ID
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_id,ID,ID
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_wizard_id,ID,ID
+openacademy,code,addons/openacademy/models.py,97,Incorrect 'seats' value,Maling bilang ng upuan
+openacademy,code,addons/openacademy/models.py,105,Increase seats or remove excess attendees,Magdagdag ng upuan o magtangal ng dadalo
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_instructor_id,Instructor,Magtuturo
+openacademy,model,"ir.model.fields,field_description",openacademy.field_res_partner_instructor,Instructor,Magtuturo
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_course___last_update,Last Modified on,Huling binago ng
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session___last_update,Last Modified on,Huling binago ng
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_wizard___last_update,Last Modified on,Huling binago ng
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_course_write_uid,Last Updated by,Huling binago ni
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_write_uid,Last Updated by,Huling binago ni
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_wizard_write_uid,Last Updated by,Huling binago ni
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_course_write_date,Last Updated on,Huling ini-update ng
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_write_date,Last Updated on,Huling ini-update ng
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_wizard_write_date,Last Updated on,Huling ini-update ng
+openacademy,model,"ir.ui.view,arch_db",openacademy.session_form_view,Mark as done,Markahan ng tapos
+openacademy,model,"ir.ui.view,arch_db",openacademy.course_search_view,My Courses,Aking kurso
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_name,Name,Pangalan
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_seats,Number of seats,Bilang ng upuan
+openacademy,model,"ir.ui.menu,name",openacademy.main_openacademy_menu,Open Academy Navbar,Navbar ng Open Academy
+openacademy,model,"ir.ui.menu,name",openacademy.openacademy_menu,Open Academy Sidebar,Sidebar ng Open Academy
+openacademy,model,"res.groups,name",openacademy.group_manager,OpenAcademy / Manager,OpenAcademy / Tagapamahala
+openacademy,model,"ir.ui.view,arch_db",openacademy.openacademy_session_graph_view,Participations by Courses,Pagpasok tungkol ng kurso
+openacademy,model,"ir.model,name",openacademy.model_res_partner,Partner,Kasabwat
+openacademy,model,"ir.ui.view,arch_db",openacademy.course_form_view,Registered sessions,Inirehistrong sesyon
+openacademy,model,"ir.ui.view,arch_db",openacademy.session_form_view,Reset to draft,Baguhin lahat
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_course_responsible_id,Responsible,Nananagot
+openacademy,model,"ir.ui.view,arch_db",openacademy.course_search_view,Responsible,Nananagot
+openacademy,model,"ir.ui.view,arch_db",openacademy.session_form_view,Schedule,Iskedyul
+openacademy,model,"ir.ui.view,arch_db",openacademy.session_calendar_view,Session Calendar,Kalendaryo ng iskedyul
+openacademy,model,"ir.ui.view,arch_db",openacademy.session_form_view,Session Form,Anyo ng Sesyon
+openacademy,model,"ir.ui.view,arch_db",openacademy.session_gantt_view,Session Gantt,Gantt Tsart ng Sesyon
+openacademy,model,"ir.ui.view,arch_db",openacademy.session_tree_view,Session Tree,Puno ng Sesyon
+openacademy,model,"ir.ui.view,arch_db",openacademy.view_openacad_session_kanban,Session name:,Pangalan ng sesyon
+openacademy,model,"ir.actions.act_window,name",openacademy.session_list_action,Sessions,Mga sesyon
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_course_session_ids,Sessions,Mga sesyon
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_wizard_session_ids,Sessions,Mga sesyon
+openacademy,model,"ir.ui.menu,name",openacademy.session_menu,Sessions,Mga sesyon
+openacademy,model,"ir.ui.view,arch_db",openacademy.course_form_view,Sessions,Mga sesyon
+openacademy,model,"ir.ui.view,arch_db",openacademy.partner_instructor_form_view,Sessions,Mga sesyon
+openacademy,model,"ir.actions.server,name",openacademy.set_session_to_confirmed,Set session to Confirmed,Kumpirma ang sesyon
+openacademy,model,"ir.actions.server,name",openacademy.set_session_to_done,Set session to Done,Tapusin ang sesyon
+openacademy,model,"ir.actions.server,name",openacademy.set_session_to_draft,Set session to Draft,Gawing plano ang sesyon
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_start_date,Start date,Petsa ng simula
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_state,State,Kalagayan
+openacademy,model,"ir.ui.view,arch_db",openacademy.wizard_form_view,Subscribe,Umayon
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_session_taken_seats,Taken seats,Kinuha na upuan
+openacademy,model,"res.partner.category,name",openacademy.teacher1,Teacher / Level 1,Guro / 1
+openacademy,model,"res.partner.category,name",openacademy.teacher2,Teacher / Level 2,Guro / 2
+openacademy,sql_constraint,openacademy.course,0,The course title must be unique,Kakaiba dapat ang pamagat ng kurso
+openacademy,code,addons/openacademy/models.py,98,The number of available seats may not be negative,Ang bilang ng pwedeng upuan ay hindi dabat negatibo
+openacademy,sql_constraint,openacademy.course,0,The title of the course should not be the description,Magkaiba dapat ang paglalarawan sa pamagat
+openacademy,model,"ir.model.fields,field_description",openacademy.field_openacademy_course_name,Title,Pamagat
+openacademy,code,addons/openacademy/models.py,104,Too many attendees,Masyadong maraming dadalo
+openacademy,model,"ir.model,name",openacademy.model_openacademy_course,openacademy.course,openacademy.course
+openacademy,model,"ir.model,name",openacademy.model_openacademy_session,openacademy.session,openacademy.session
+openacademy,model,"ir.model,name",openacademy.model_openacademy_wizard,openacademy.wizard,openacademy.wizard
+openacademy,model,"ir.ui.view,arch_db",openacademy.wizard_form_view,or,or
