@@ -8,6 +8,7 @@
 
 #### In Progress
 - [ ] Draft: Project Schedule
+- [ ] Philippine Localization of Accounting Module
 
 #### To Do
 - [ ] Investigate: Localizing Odoo
