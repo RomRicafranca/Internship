@@ -9,7 +9,7 @@
 #### In Progress
 - [ ] Draft: Project Schedule
 - [ ] Philippine Localization of Accounting Module
-- [ ] Analyze Belgian Accounting Module and Belgian Accounting Reports Module. 
+- [ ] Analyze [Belgium Accounting Module] (https://github.com/odoo/odoo/tree/7682760dcad232829fbb5d4221f66a1ebb9d6c91/addons/l10n_be) and Belgium Accounting Reports Module.
   - [ ] Describe objects (e.g., menu items, views, reports) that are created by these modules.
   - [ ] Describe the purpose and content of source code structure (files, folders) in ```https://github.com/odoo/odoo```
   - [ ] Map objects in the application to the source code 
