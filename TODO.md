@@ -10,9 +10,9 @@
 - [ ] Draft: Project Schedule
 - [ ] Philippine Localization of Accounting Module
 - [ ] Analyze Belgian Accounting Module and Belgian Accounting Reports Module. 
-  - [ ]Describe objects (e.g., menu items, views, reports) that are created by these modules.
+  - [ ] Describe objects (e.g., menu items, views, reports) that are created by these modules.
   - [ ] Describe the purpose and content of source code structure (files, folders) in ```https://github.com/odoo/odoo```
-  - [ ]Map objects in the application to the source code 
+  - [ ] Map objects in the application to the source code 
 
 #### To Do
 - [ ] Investigate: Localizing Odoo
