@@ -1,0 +1,86 @@
+Objects created by Singapore-Accounting:
+	account.tax
+		Description: Taxes to be applied to transactions in the Accounting module.
+		Odoo: Configuration -> Accounting -> Taxes
+		Source: l10n_sg_chart_tax.xml
+		Template:
+			<record id="id" model="account.account.tag">
+				<field name="name">name</field> //Name of entry
+				<field name="applicability">taxes</field> //application of account, in this case taxes.
+			</record>
+			
+			<record id="id" model="account.tax.template">
+				<field name="name">name</field> //Name of entry
+				<field name="description">description</field> //Description of entry
+				<field name="price_include" eval="0"/> //Default apply to product, default to 0
+				<field name="amount">0</field> //TODO
+				<field name="amount_type">percent</field> //How the tax is computed
+				<field name="type_tax_use">sale</field> //Determines when the tax can be applied, in this case for sale. Can also be purchase.
+				<field name="account_id" ref="account_account_791"/> //Account that will be set on invoice tax lines for invoices
+				<field name="refund_account_id" ref="account_account_791"/> //Account that will be set on invoice tax lines for refunds. 
+				<field name="chart_template_id" ref="sg_chart_template"/> //To which chart of accounts it belongs to?
+				<field name="tag_ids" eval="[(6,0,[ref('tag_sg_sale_tax_es_0')])]"/> //Custom tags
+			</record>
+			
+	account.account
+		Description: Chart of Accounts entry
+		Odoo: Adviser -> Chart of Accounts
+		Source: l10n_sg_chart.xml
+		Template:
+			<record model="account.account.template" id="id">
+				<field name="name">name</field> //Name of Entry
+				<field name="code">id</field> //Code in Chart of Accounts
+				<field name="user_type_id" ref="account.data_account_type_current_assets" /> //Type of entry. Could be asset, liability, equity revenue or expenses.
+				<field name="chart_template_id" ref="sg_chart_template"/> //To which chart of accounts it belongs to
+				<field name="reconcile" eval="False" /> //allows invoices & payments matching of journal items.
+			</record>
+			
+	Menu Item
+		Description: Creates a menu item under Reporting named "Singaporean Statements" and ordering it as the third from the top.
+		Odoo: Reporting
+		Source: l10n_sg_chart.xml
+		Template:		
+			<menuitem id="account_reports_sg_statements_menu" name="Singaporean Statements" parent="account.menu_finance_reports" sequence="3" groups="account.group_account_user"/>
+		
+		
+		
+Objects created by Singapore-Accounting Reports:
+	Odoo: Reporting -> Singapore Statements -> Chart of Singapore
+	Source: All objects located in account_financial_html_report.xml
+	
+	account.financial.html.report
+		Description: Creates an entry under "Singaporean Statements" created by Singapore-Accounting named "Chart of Singapore"
+		Template:
+			<record id="account_financial_report_l10n_sg" model="account.financial.html.report">
+				<field name="name">Chart of Singapore</field>
+				<field name="report_type">date_range</field>
+				<field name='parent_id' ref='l10n_sg.account_reports_sg_statements_menu'/>
+			</record>
+		
+	account.financial.html.report.line
+		Description: Creates a new entry header in Chart of Singapore
+		Template:
+			<record id="account_financial_report_sg_01_01" model="account.financial.html.report.line">
+				<field name="name">Tax Received</field> //Field name
+				<field name="code">SGTAX_Box6</field>
+				<field name="sequence" eval="1"/> //Order in its level
+				<field name="level" eval="1"/> //Header, sub-header etc.
+				<field name="formulas">balance = SGTAX_Tax_Received0.balance + SGTAX_Tax_Received7_SR.balance + SGTAX_Tax_Received7_DS.balance</field> //How the entry is computed
+				<field name="parent_id" ref="account_financial_report_sg_01"/> //What is its closest upper level
+				<field name="special_date_changer">strict_range</field>
+			</record>
+	
+	account.financial.html.report.line
+		Description: Creates a new entry in Chart of Singapore
+		Template:
+			<record id="account_financial_report_sg_05_01_01_01" model="account.financial.html.report.line">
+				<field name="name">Sales 7% Standard SR</field> //Field name
+				<field name="code">SGTAX_Sales_7_Standard_SR</field> //Code for formulas
+				<field name="sequence" eval="1"/> //Order in the level, in this case first.
+				<field name="level" eval="3"/> //Third level, Under an entry which is under another entry
+				<field name="domain" eval="[('tax_ids.tag_ids', 'in', [ref('l10n_sg.tag_sg_sale_tax_sr_7')])]"/> //The value gathered from the database
+				<field name="formulas">balance = - sum.balance</field> //How this single entry is computed
+				<field name="parent_id" ref="account_financial_report_sg_05_01_01"/> //What entry it's under
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
