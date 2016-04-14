@@ -10,9 +10,10 @@
 - [ ] Draft: Project Schedule
 - [ ] Philippine Localization of Accounting Module
 - [ ] Analyze [Singapore Accounting Module](https://github.com/odoo/odoo/tree/9.0/addons/l10n_sg) and Singapore Accounting Reports Module.
-  - [ ] Describe objects (e.g., menu items, views, reports) that are created by these modules.
+  - [X] Describe objects (e.g., menu items, views, reports) that are created by these modules.
+    - [ ] Create ER Diagram.
   - [ ] Describe the purpose and content of source code structure (files, folders) in ```https://github.com/odoo/odoo```
-  - [ ] Map objects in the application to the source code 
+  - [X] Map objects in the application to the source code 
 
 #### To Do
 - [ ] Investigate: Localizing Odoo
