@@ -11,8 +11,8 @@
 - [ ] Philippine Localization of Accounting Module
 - [ ] Analyze [Singapore Accounting Module](https://github.com/odoo/odoo/tree/9.0/addons/l10n_sg) and Singapore Accounting Reports Module.
   - [X] Describe objects (e.g., menu items, views, reports) that are created by these modules.
-    - [ ] Create ER Diagram.
-  - [ ] Describe the purpose and content of source code structure (files, folders) in ```https://github.com/odoo/odoo```
+    - [X] Create ER Diagram.
+  - [X] Describe the purpose and content of source code structure (files, folders) in ```https://github.com/odoo/odoo```
   - [X] Map objects in the application to the source code 
 
 #### To Do
