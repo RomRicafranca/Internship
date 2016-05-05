@@ -84,3 +84,5 @@ Objects created by Singapore-Accounting Reports:
 				<field name="show_domain">never</field>
 				<field name="special_date_changer">strict_range</field>
 			</record>
+			
+ER Diagram: https://www.lucidchart.com/invitations/accept/ab679d26-7005-4b15-8b54-309ed7672d2f
