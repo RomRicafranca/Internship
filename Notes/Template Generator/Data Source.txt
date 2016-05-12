@@ -1,0 +1,2 @@
+Assets.txt, Equities.txt, Expenses.txt, Income.txt, Liabilities.txt: 
+	BIR Account Information Form 1702AIF http://www.bir.gov.ph/images/bir_files/old_files/pdf/19201702aif.pdf
