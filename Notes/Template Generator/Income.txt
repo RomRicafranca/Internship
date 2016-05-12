@@ -1,0 +1,6 @@
+11:: Gross Sales/Revenues/Receipts/Fees
+16:: Gross Profit From Operations
+17:: Gain from Sales/Exchanges of Real Property
+18:: Gain from Sales/Exchanges of Other Fixed Assets, Scrap, etc.
+19:: Gain from Sales/Exchanges of Stocks
+20:: Other Income
