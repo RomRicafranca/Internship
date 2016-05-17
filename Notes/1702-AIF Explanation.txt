@@ -1,0 +1,5 @@
+1702-AIF Explanation:
+	Special Rates:
+		For businesses with special rates like those in special economic zones.
+	Exempt:
+		For businesses that are tax-exempt like churches and non-profits.

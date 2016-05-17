@@ -1,0 +1,20 @@
+52:: Marketable Securities
+53:: Account Receivables - Trade
+54:: Less: Allowance for Bad Debts
+57:: Finished Goods/Merchandise
+58:: Goods in Process
+59:: Raw Materials
+60:: Supplies
+62:: Prepayments
+64:: Stocks and Bonds
+65:: Real Estate
+66:: Others
+68:: Land
+69:: Building
+70:: Less: Accumulated Depreciation
+72:: Other Depreciable Assets
+73:: Less: Accumulated Depreciation
+75:: Fixed Asset - Appraisal Increase
+76:: Less: Accumulated Depreciation
+79:: Intangibles
+80:: Other Assets

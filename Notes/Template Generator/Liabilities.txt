@@ -1,4 +1,0 @@
-82:: Accounts Payable - Trade
-83:: Other payables
-85:: Long Term Debts
-86:: Deferred Credits/Other Liabilities

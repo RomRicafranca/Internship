@@ -1,0 +1,7 @@
+88:: Capital Stock
+89:: Premium (Discount) on Capital Stock
+90:: Retained Earnings
+91:: Appraisal Capital
+92:: Donated Capital
+93:: Treasury Stock
+95:: Partners' Equity
