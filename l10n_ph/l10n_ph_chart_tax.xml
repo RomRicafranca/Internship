@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+		<record id="tag_ph_vat_sale" model="account.account.tag">
+			<field name="name">Sales - Value Added Tax 12%</field>
+			<field name="applicability">taxes</field>
+		</record>
+		
+		<record id="tag_ph_vat_purchase" model="account.account.tag">
+			<field name="name">Purchase - Value Added Tax 12%</field>
+			<field name="applicability">taxes</field>
+		</record>
+		
+		<record id="ph_vat_sale" model="account.tax.template">
+			<field name="name">Sales - Value Added Tax 12%</field>
+			<field name="description">12%</field>
+			<field name="price_include" eval="0"/>
+			<field name="amount">12</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">sale</field>
+			<field name="account_id" ref="account_account_tax_01"/>
+			<field name="refund_account_id" ref="account_account_tax_01"/>
+			<field name="chart_template_id" ref="ph_chart_template"/>
+			<field name="tag_ids" eval="[(6,0,[ref('tag_ph_vat_sale')])]"/>
+		</record>
+		
+		<record id="ph_vat_purchase" model="account.tax.template">
+			<field name="name">Purchase - Value Added Tax 12%</field>
+			<field name="description">12%</field>
+			<field name="price_include" eval="0"/>
+			<field name="amount">12</field>
+			<field name="amount_type">percent</field>
+			<field name="type_tax_use">sale</field>
+			<field name="account_id" ref="account_account_tax_02"/>
+			<field name="refund_account_id" ref="account_account_tax_02"/>
+			<field name="chart_template_id" ref="ph_chart_template"/>
+			<field name="tag_ids" eval="[(6,0,[ref('tag_ph_vat_purchase')])]"/>
+		</record>
+		
+	</data>
+</odoo>

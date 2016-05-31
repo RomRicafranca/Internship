@@ -33,543 +33,989 @@
     <record id="transfer_account_id" model="account.account.template">
         <field name="chart_template_id" ref="ph_chart_template"/>
     </record>
+	
+	
+	<!-- Account tags-->
+	
 
-    <record model="account.account.template" id="account_account_696">
+	<record id="tag_account_account_asset_1" model="account.account.tag">
+		<field name="name">Cash on Hand and in Banks</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_2" model="account.account.tag">
+		<field name="name">Marketable Securities</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_3" model="account.account.tag">
+		<field name="name">Account Receivables - Trade</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_4" model="account.account.tag">
+		<field name="name">Less: Allowance for Bad Debts</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_5" model="account.account.tag">
+		<field name="name">Other Receivables</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_6" model="account.account.tag">
+		<field name="name">Finished Goods/Merchandise</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_7" model="account.account.tag">
+		<field name="name">Goods in Process</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_8" model="account.account.tag">
+		<field name="name">Raw Materials</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_9" model="account.account.tag">
+		<field name="name">Supplies</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_10" model="account.account.tag">
+		<field name="name">Prepayments</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_11" model="account.account.tag">
+		<field name="name">Stocks and Bonds</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_12" model="account.account.tag">
+		<field name="name">Real Estate</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_13" model="account.account.tag">
+		<field name="name">Others</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_14" model="account.account.tag">
+		<field name="name">Land</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_15" model="account.account.tag">
+		<field name="name">Building</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_16" model="account.account.tag">
+		<field name="name">Less: Accumulated Depreciation</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_17" model="account.account.tag">
+		<field name="name">Other Depreciable Assets</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_18" model="account.account.tag">
+		<field name="name">Less: Accumulated Depreciation</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_19" model="account.account.tag">
+		<field name="name">Fixed Asset - Appraisal Increase</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_20" model="account.account.tag">
+		<field name="name">Less: Accumulated Depreciation</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_21" model="account.account.tag">
+		<field name="name">Intangibles</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_asset_22" model="account.account.tag">
+		<field name="name">Other Assets</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_liability_1" model="account.account.tag">
+		<field name="name">Accounts Payable - Trade</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_liability_2" model="account.account.tag">
+		<field name="name">Other payables</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_liability_3" model="account.account.tag">
+		<field name="name">Long Term Debts</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_liability_4" model="account.account.tag">
+		<field name="name">Deferred Credits/Other Liabilities</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_equity_1" model="account.account.tag">
+		<field name="name">Capital Stock</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_equity_2" model="account.account.tag">
+		<field name="name">Premium (Discount) on Capital Stock</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_equity_3" model="account.account.tag">
+		<field name="name">Retained Earnings</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_equity_4" model="account.account.tag">
+		<field name="name">Appraisal Capital</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_equity_5" model="account.account.tag">
+		<field name="name">Donated Capital</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_equity_6" model="account.account.tag">
+		<field name="name">Treasury Stock</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_equity_7" model="account.account.tag">
+		<field name="name">Partners' Equity</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_revenue_1" model="account.account.tag">
+		<field name="name">Gross Sales/Revenues/Receipts/Fees</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_revenue_2" model="account.account.tag">
+		<field name="name">Gross Profit From Operations</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_revenue_3" model="account.account.tag">
+		<field name="name">Gain from Sales/Exchanges of Real Property</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_revenue_4" model="account.account.tag">
+		<field name="name">Gain from Sales/Exchanges of Other Fixed Assets, Scrap, etc.</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_revenue_5" model="account.account.tag">
+		<field name="name">Gain from Sales/Exchanges of Stocks</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_revenue_6" model="account.account.tag">
+		<field name="name">Other Income</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_1" model="account.account.tag">
+		<field name="name">Sales Returns and Allowances</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_2" model="account.account.tag">
+		<field name="name">Sales Discounts</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_3" model="account.account.tag">
+		<field name="name">Cost of Sales/Services/Direct Costs</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_4" model="account.account.tag">
+		<field name="name">Fund Utilization</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_5" model="account.account.tag">
+		<field name="name">Salaries and Allowances</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_6" model="account.account.tag">
+		<field name="name">Fringe Benefits</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_7" model="account.account.tag">
+		<field name="name">SSS, GSIS, Medicare, HDMF and Other Contributions</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_8" model="account.account.tag">
+		<field name="name">Commission</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_9" model="account.account.tag">
+		<field name="name">Advertising</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_10" model="account.account.tag">
+		<field name="name">Rental</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_11" model="account.account.tag">
+		<field name="name">Insurance</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_12" model="account.account.tag">
+		<field name="name">Royalties</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_13" model="account.account.tag">
+		<field name="name">Repairs and Maintenance</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_14" model="account.account.tag">
+		<field name="name">Representation and Entertainment</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_15" model="account.account.tag">
+		<field name="name">Transportation and Travel</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_16" model="account.account.tag">
+		<field name="name">Fuel and Oil</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_17" model="account.account.tag">
+		<field name="name">Communications, Light and Water</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_18" model="account.account.tag">
+		<field name="name">Supplies</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_19" model="account.account.tag">
+		<field name="name">Interest</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_20" model="account.account.tag">
+		<field name="name">Taxes and Licenses</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_21" model="account.account.tag">
+		<field name="name">Losses</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_22" model="account.account.tag">
+		<field name="name">Bad Debts</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_23" model="account.account.tag">
+		<field name="name">Depreciation</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_24" model="account.account.tag">
+		<field name="name">Amortization of Intangibles</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_25" model="account.account.tag">
+		<field name="name">Depletion</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_26" model="account.account.tag">
+		<field name="name">Charitable Contribution</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_27" model="account.account.tag">
+		<field name="name">Research and Development</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_28" model="account.account.tag">
+		<field name="name">Amortization of Pension Trust Contribution</field>
+		<field name="applicability">accounts</field>
+	</record>
+
+	<record id="tag_account_account_expense_29" model="account.account.tag">
+		<field name="name">Miscellaneous</field>
+		<field name="applicability">accounts</field>
+	</record>
+	
+	
+	<!-- Accounts-->
+	<record model="account.account.template" id="account_account_asset_1">
+		<field name="name">Cash on Hand and in Banks</field> 
+		<field name="code">51</field> 
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_1')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_asset_2">
 		<field name="name">Marketable Securities</field> 
 		<field name="code">52</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_2')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_697">
+	<record model="account.account.template" id="account_account_asset_3">
 		<field name="name">Account Receivables - Trade</field> 
 		<field name="code">53</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_3')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_698">
+	<record model="account.account.template" id="account_account_asset_4">
 		<field name="name">Less: Allowance for Bad Debts</field> 
 		<field name="code">54</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_4')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_699">
+	<record model="account.account.template" id="account_account_asset_5">
+		<field name="name">Other Receivables</field> 
+		<field name="code">56</field> 
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_5')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_asset_6">
 		<field name="name">Finished Goods/Merchandise</field> 
 		<field name="code">57</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_6')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_700">
+	<record model="account.account.template" id="account_account_asset_7">
 		<field name="name">Goods in Process</field> 
 		<field name="code">58</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_7')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_701">
+	<record model="account.account.template" id="account_account_asset_8">
 		<field name="name">Raw Materials</field> 
 		<field name="code">59</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_8')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_702">
+	<record model="account.account.template" id="account_account_asset_9">
 		<field name="name">Supplies</field> 
 		<field name="code">60</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_9')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_703">
+	<record model="account.account.template" id="account_account_asset_10">
 		<field name="name">Prepayments</field> 
 		<field name="code">62</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_10')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_704">
+	<record model="account.account.template" id="account_account_asset_11">
 		<field name="name">Stocks and Bonds</field> 
 		<field name="code">64</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_11')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_705">
+	<record model="account.account.template" id="account_account_asset_12">
 		<field name="name">Real Estate</field> 
 		<field name="code">65</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_12')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_706">
+	<record model="account.account.template" id="account_account_asset_13">
 		<field name="name">Others</field> 
 		<field name="code">66</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_13')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_707">
+	<record model="account.account.template" id="account_account_asset_14">
 		<field name="name">Land</field> 
 		<field name="code">68</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_14')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_708">
+	<record model="account.account.template" id="account_account_asset_15">
 		<field name="name">Building</field> 
 		<field name="code">69</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_15')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_709">
+	<record model="account.account.template" id="account_account_asset_16">
 		<field name="name">Less: Accumulated Depreciation</field> 
 		<field name="code">70</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_16')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_710">
+	<record model="account.account.template" id="account_account_asset_17">
 		<field name="name">Other Depreciable Assets</field> 
 		<field name="code">72</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_17')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_711">
+	<record model="account.account.template" id="account_account_asset_18">
 		<field name="name">Less: Accumulated Depreciation</field> 
 		<field name="code">73</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_18')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_712">
+	<record model="account.account.template" id="account_account_asset_19">
 		<field name="name">Fixed Asset - Appraisal Increase</field> 
 		<field name="code">75</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_19')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_713">
+	<record model="account.account.template" id="account_account_asset_20">
 		<field name="name">Less: Accumulated Depreciation</field> 
 		<field name="code">76</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_20')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_714">
+	<record model="account.account.template" id="account_account_asset_21">
 		<field name="name">Intangibles</field> 
 		<field name="code">79</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_21')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_715">
+	<record model="account.account.template" id="account_account_asset_22">
 		<field name="name">Other Assets</field> 
 		<field name="code">80</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_assets" />
+		<field name="user_type_id" ref="account.data_account_type_current_assets"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_asset_22')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_716">
+	<record model="account.account.template" id="account_account_liability_1">
 		<field name="name">Accounts Payable - Trade</field> 
 		<field name="code">82</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_liabilities" />
+		<field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_liability_1')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_717">
+	<record model="account.account.template" id="account_account_liability_2">
 		<field name="name">Other payables</field> 
 		<field name="code">83</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_liabilities" />
+		<field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_liability_2')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_718">
+	<record model="account.account.template" id="account_account_liability_3">
 		<field name="name">Long Term Debts</field> 
 		<field name="code">85</field> 
-		<field name="user_type_id" ref="account.data_account_type_current_liabilities" />
+		<field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_liability_3')])]"/>
 	</record>
 
-	<record model="account.account.template" id="account_account_719">
+	<record model="account.account.template" id="account_account_liability_4">
 		<field name="name">Deferred Credits/Other Liabilities</field> 
 		<field name="code">86</field> 
+		<field name="user_type_id" ref="account.data_account_type_current_liabilities"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_liability_4')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_equity_1">
+		<field name="name">Capital Stock</field> 
+		<field name="code">88</field> 
+		<field name="user_type_id" ref="account.data_account_type_equity"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_equity_1')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_equity_2">
+		<field name="name">Premium (Discount) on Capital Stock</field> 
+		<field name="code">89</field> 
+		<field name="user_type_id" ref="account.data_account_type_equity"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_equity_2')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_equity_3">
+		<field name="name">Retained Earnings</field> 
+		<field name="code">90</field> 
+		<field name="user_type_id" ref="account.data_account_type_equity"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_equity_3')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_equity_4">
+		<field name="name">Appraisal Capital</field> 
+		<field name="code">91</field> 
+		<field name="user_type_id" ref="account.data_account_type_equity"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_equity_4')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_equity_5">
+		<field name="name">Donated Capital</field> 
+		<field name="code">92</field> 
+		<field name="user_type_id" ref="account.data_account_type_equity"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_equity_5')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_equity_6">
+		<field name="name">Treasury Stock</field> 
+		<field name="code">93</field> 
+		<field name="user_type_id" ref="account.data_account_type_equity"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_equity_6')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_equity_7">
+		<field name="name">Partners' Equity</field> 
+		<field name="code">95</field> 
+		<field name="user_type_id" ref="account.data_account_type_equity"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_equity_7')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_revenue_1">
+		<field name="name">Gross Sales/Revenues/Receipts/Fees</field> 
+		<field name="code">11</field> 
+		<field name="user_type_id" ref="account.data_account_type_revenue"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_revenue_1')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_revenue_2">
+		<field name="name">Gross Profit From Operations</field> 
+		<field name="code">16</field> 
+		<field name="user_type_id" ref="account.data_account_type_revenue"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_revenue_2')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_revenue_3">
+		<field name="name">Gain from Sales/Exchanges of Real Property</field> 
+		<field name="code">17</field> 
+		<field name="user_type_id" ref="account.data_account_type_revenue"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_revenue_3')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_revenue_4">
+		<field name="name">Gain from Sales/Exchanges of Other Fixed Assets, Scrap, etc.</field> 
+		<field name="code">18</field> 
+		<field name="user_type_id" ref="account.data_account_type_revenue"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_revenue_4')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_revenue_5">
+		<field name="name">Gain from Sales/Exchanges of Stocks</field> 
+		<field name="code">19</field> 
+		<field name="user_type_id" ref="account.data_account_type_revenue"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_revenue_5')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_revenue_6">
+		<field name="name">Other Income</field> 
+		<field name="code">20</field> 
+		<field name="user_type_id" ref="account.data_account_type_revenue"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_revenue_6')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_1">
+		<field name="name">Sales Returns and Allowances</field> 
+		<field name="code">12</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_1')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_2">
+		<field name="name">Sales Discounts</field> 
+		<field name="code">13</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_2')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_3">
+		<field name="name">Cost of Sales/Services/Direct Costs</field> 
+		<field name="code">15</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_3')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_4">
+		<field name="name">Fund Utilization</field> 
+		<field name="code">22</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_4')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_5">
+		<field name="name">Salaries and Allowances</field> 
+		<field name="code">23</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_5')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_6">
+		<field name="name">Fringe Benefits</field> 
+		<field name="code">24</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_6')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_7">
+		<field name="name">SSS, GSIS, Medicare, HDMF and Other Contributions</field> 
+		<field name="code">25</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_7')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_8">
+		<field name="name">Commission</field> 
+		<field name="code">26</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_8')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_9">
+		<field name="name">Advertising</field> 
+		<field name="code">28</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_9')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_10">
+		<field name="name">Rental</field> 
+		<field name="code">29</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_10')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_11">
+		<field name="name">Insurance</field> 
+		<field name="code">30</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_11')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_12">
+		<field name="name">Royalties</field> 
+		<field name="code">31</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_12')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_13">
+		<field name="name">Repairs and Maintenance</field> 
+		<field name="code">32</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_13')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_14">
+		<field name="name">Representation and Entertainment</field> 
+		<field name="code">33</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_14')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_15">
+		<field name="name">Transportation and Travel</field> 
+		<field name="code">34</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_15')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_16">
+		<field name="name">Fuel and Oil</field> 
+		<field name="code">35</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_16')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_17">
+		<field name="name">Communications, Light and Water</field> 
+		<field name="code">36</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_17')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_18">
+		<field name="name">Supplies</field> 
+		<field name="code">37</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_18')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_19">
+		<field name="name">Interest</field> 
+		<field name="code">38</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_19')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_20">
+		<field name="name">Taxes and Licenses</field> 
+		<field name="code">39</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_20')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_21">
+		<field name="name">Losses</field> 
+		<field name="code">40</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_21')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_22">
+		<field name="name">Bad Debts</field> 
+		<field name="code">41</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_22')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_23">
+		<field name="name">Depreciation</field> 
+		<field name="code">42</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_23')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_24">
+		<field name="name">Amortization of Intangibles</field> 
+		<field name="code">43</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_24')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_25">
+		<field name="name">Depletion</field> 
+		<field name="code">44</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_25')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_26">
+		<field name="name">Charitable Contribution</field> 
+		<field name="code">45</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_26')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_27">
+		<field name="name">Research and Development</field> 
+		<field name="code">46</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_27')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_28">
+		<field name="name">Amortization of Pension Trust Contribution</field> 
+		<field name="code">47</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_28')])]"/>
+	</record>
+
+	<record model="account.account.template" id="account_account_expense_29">
+		<field name="name">Miscellaneous</field> 
+		<field name="code">48</field> 
+		<field name="user_type_id" ref="account.data_account_type_expenses"/>
+		<field name="chart_template_id" ref="ph_chart_template"/>
+		<field name="reconcile" eval="False" />
+		<field name="tag_ids" eval="[(6,0,[ref('tag_account_account_expense_29')])]"/>
+	</record>
+	
+	<record model="account.account.template" id="account_account_tax_01">
+		<field name="name">Sales - Value Added Tax 12%</field> 
+		<field name="code">1001</field> 
 		<field name="user_type_id" ref="account.data_account_type_current_liabilities" />
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
 	</record>
-
-	<record model="account.account.template" id="account_account_720">
-		<field name="name">Capital Stock</field> 
-		<field name="code">88</field> 
-		<field name="user_type_id" ref="account.data_account_type_equity" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_721">
-		<field name="name">Premium (Discount) on Capital Stock</field> 
-		<field name="code">89</field> 
-		<field name="user_type_id" ref="account.data_account_type_equity" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_722">
-		<field name="name">Retained Earnings</field> 
-		<field name="code">90</field> 
-		<field name="user_type_id" ref="account.data_account_type_equity" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_723">
-		<field name="name">Appraisal Capital</field> 
-		<field name="code">91</field> 
-		<field name="user_type_id" ref="account.data_account_type_equity" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_724">
-		<field name="name">Donated Capital</field> 
-		<field name="code">92</field> 
-		<field name="user_type_id" ref="account.data_account_type_equity" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_725">
-		<field name="name">Treasury Stock</field> 
-		<field name="code">93</field> 
-		<field name="user_type_id" ref="account.data_account_type_equity" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_726">
-		<field name="name">Partners' Equity</field> 
-		<field name="code">95</field> 
-		<field name="user_type_id" ref="account.data_account_type_equity" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_727">
-		<field name="name">Gross Sales/Revenues/Receipts/Fees</field> 
-		<field name="code">11</field> 
-		<field name="user_type_id" ref="account.data_account_type_revenue" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_728">
-		<field name="name">Gross Profit From Operations</field> 
-		<field name="code">16</field> 
-		<field name="user_type_id" ref="account.data_account_type_revenue" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_729">
-		<field name="name">Gain from Sales/Exchanges of Real Property</field> 
-		<field name="code">17</field> 
-		<field name="user_type_id" ref="account.data_account_type_revenue" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_730">
-		<field name="name">Gain from Sales/Exchanges of Other Fixed Assets, Scrap, etc.</field> 
-		<field name="code">18</field> 
-		<field name="user_type_id" ref="account.data_account_type_revenue" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_731">
-		<field name="name">Gain from Sales/Exchanges of Stocks</field> 
-		<field name="code">19</field> 
-		<field name="user_type_id" ref="account.data_account_type_revenue" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_732">
-		<field name="name">Other Income</field> 
-		<field name="code">20</field> 
-		<field name="user_type_id" ref="account.data_account_type_revenue" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_733">
-		<field name="name">Sales Returns and Allowances</field> 
-		<field name="code">12</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_734">
-		<field name="name">Sales Discounts</field> 
-		<field name="code">13</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_735">
-		<field name="name">Cost of Sales/Services/Direct Costs</field> 
-		<field name="code">15</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_736">
-		<field name="name">Fund Utilization</field> 
-		<field name="code">22</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_737">
-		<field name="name">Salaries and Allowances</field> 
-		<field name="code">23</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_738">
-		<field name="name">Fringe Benefits</field> 
-		<field name="code">24</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_739">
-		<field name="name">SSS, GSIS, Medicare, HDMF and Other Contributions</field> 
-		<field name="code">25</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_740">
-		<field name="name">Commission</field> 
-		<field name="code">26</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_741">
-		<field name="name">Advertising</field> 
-		<field name="code">28</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_742">
-		<field name="name">Rental</field> 
-		<field name="code">29</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_743">
-		<field name="name">Insurance</field> 
-		<field name="code">30</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_744">
-		<field name="name">Royalties</field> 
-		<field name="code">31</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_745">
-		<field name="name">Repairs and Maintenance</field> 
-		<field name="code">32</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_746">
-		<field name="name">Representation and Entertainment</field> 
-		<field name="code">33</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_747">
-		<field name="name">Transportation and Travel</field> 
-		<field name="code">34</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_748">
-		<field name="name">Fuel and Oil</field> 
-		<field name="code">35</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_749">
-		<field name="name">Communications, Light and Water</field> 
-		<field name="code">36</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_750">
-		<field name="name">Supplies</field> 
-		<field name="code">37</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_751">
-		<field name="name">Interest</field> 
-		<field name="code">38</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_752">
-		<field name="name">Taxes and Licenses</field> 
-		<field name="code">39</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_753">
-		<field name="name">Losses</field> 
-		<field name="code">40</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_754">
-		<field name="name">Bad Debts</field> 
-		<field name="code">41</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_755">
-		<field name="name">Depreciation</field> 
-		<field name="code">42</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_756">
-		<field name="name">Amortization of Intangibles</field> 
-		<field name="code">43</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_757">
-		<field name="name">Depletion</field> 
-		<field name="code">44</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_758">
-		<field name="name">Charitable Contribution</field> 
-		<field name="code">45</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_759">
-		<field name="name">Research and Development</field> 
-		<field name="code">46</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_760">
-		<field name="name">Amortization of Pension Trust Contribution</field> 
-		<field name="code">47</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
-		<field name="chart_template_id" ref="ph_chart_template"/>
-		<field name="reconcile" eval="False" />
-	</record>
-
-	<record model="account.account.template" id="account_account_761">
-		<field name="name">Miscellaneous</field> 
-		<field name="code">48</field> 
-		<field name="user_type_id" ref="account.data_account_type_expenses" />
+	
+	<record model="account.account.template" id="account_account_tax_02">
+		<field name="name">Purchase - Value Added Tax 12%</field> 
+		<field name="code">1002</field> 
+		<field name="user_type_id" ref="account.data_account_type_current_assets" />
 		<field name="chart_template_id" ref="ph_chart_template"/>
 		<field name="reconcile" eval="False" />
 	</record>
 	
 	
     <record id="ph_chart_template" model="account.chart.template">
-        <field name="property_account_receivable_id" ref="account_account_697" />
-        <field name="property_account_payable_id" ref="account_account_716" />
-		<field name="property_account_income_categ_id" ref="account_account_728" />
-        <field name="property_account_expense_categ_id" ref="account_account_735" />
-        <field name="income_currency_exchange_account_id" ref="account_account_730"/>
-        <field name="expense_currency_exchange_account_id" ref="account_account_753"/>
+        <field name="property_account_receivable_id" ref="account_account_asset_2" />
+        <field name="property_account_payable_id" ref="account_account_liability_1" />
+		<field name="property_account_income_categ_id" ref="account_account_revenue_2" />
+        <field name="property_account_expense_categ_id" ref="account_account_expense_3" />
+        <field name="income_currency_exchange_account_id" ref="account_account_revenue_3"/>
+        <field name="expense_currency_exchange_account_id" ref="account_account_expense_21"/>
     </record>
-
+		
 </odoo>

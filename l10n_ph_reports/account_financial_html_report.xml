@@ -1,0 +1,1101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_financial_report_l10n_ph" model="account.financial.html.report">
+        <field name="name">1702-AIF</field>
+        <field name="report_type">date_range</field>
+        <field name='parent_id' ref='l10n_ph.account_reports_ph_statements_menu'/>
+    </record>
+	
+	<record id="account_financial_report_ph_01" model="account.financial.html.report.line">
+        <field name="name">Part 2</field>
+        <field name="code">PH_BOX2</field>
+        <field name="level" eval="0"/>
+		<field name="sequence" eval="1"/>
+        <field name="financial_report_id" ref="account_financial_report_l10n_ph"/>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+
+		<record id="account_financial_report_ph_01_01" model="account.financial.html.report.line">
+			<field name="name">Gross Sales/ Revenues/ Receipts/ Fees</field>
+			<field name="code">PH_BOX21</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="1"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_revenue_1')])]"/>
+			<field name="formulas">balance = - sum.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_01"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+	
+			<record id="account_financial_report_ph_01_01_01" model="account.financial.html.report.line">
+				<field name="name">Less: Sales Returns and Allowances</field>
+				<field name="code">PH_BOX211</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="1"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_1')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_01"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+		
+			<record id="account_financial_report_ph_01_01_02" model="account.financial.html.report.line">
+				<field name="name">Sales Discounts</field>
+				<field name="code">PH_BOX212</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="2"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_2')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_01"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+		<record id="account_financial_report_ph_01_02" model="account.financial.html.report.line">
+			<field name="name">Net Sales/ Revenues/ Receipts/ Fees</field>
+			<field name="code">PH_Box22</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="2"/>
+			<field name="formulas">balance = PH_BOX21.balance - PH_BOX211.balance - PH_BOX212.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_01"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_01_03" model="account.financial.html.report.line">
+			<field name="name">Less: Cost of Sales/Services/Direct Costs</field>
+			<field name="code">PH_Box23</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="3"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_3')])]"/>
+			<field name="formulas">balance = sum.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_01"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_01_04" model="account.financial.html.report.line">
+			<field name="name">Gross Profit From Operations</field>
+			<field name="code">PH_BOX24</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="4"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_revenue_2')])]"/>
+			<field name="formulas">balance = - sum.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_01"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+			<record id="account_financial_report_ph_01_04_01" model="account.financial.html.report.line">
+				<field name="name">Gain from Sales/Exchanges of Real Property</field>
+				<field name="code">PH_BOX241</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="1"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_revenue_3')])]"/>
+				<field name="formulas">balance = - sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_04"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+			<record id="account_financial_report_ph_01_04_02" model="account.financial.html.report.line">
+				<field name="name">Gain from Sales/Exchanges of Other Fixed Assets, Scrap, etc.</field>
+				<field name="code">PH_BOX242</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="2"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_revenue_4')])]"/>
+				<field name="formulas">balance = - sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_04"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+			<record id="account_financial_report_ph_01_04_03" model="account.financial.html.report.line">
+				<field name="name">Gain from Sales/Exchanges of Stocks</field>
+				<field name="code">PH_BOX243</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="3"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_revenue_5')])]"/>
+				<field name="formulas">balance = - sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_04"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+			<record id="account_financial_report_ph_01_04_04" model="account.financial.html.report.line">
+				<field name="name">Other Income</field>
+				<field name="code">PH_BOX244</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="4"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_revenue_6')])]"/>
+				<field name="formulas">balance = - sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_04"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+		<record id="account_financial_report_ph_01_05" model="account.financial.html.report.line">
+			<field name="name">Total Gross Income</field>
+			<field name="code">PH_BOX25</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="5"/>
+			<field name="formulas">balance = PH_BOX24.balance + PH_BOX241.balance + PH_BOX242.balance + PH_BOX243.balance + PH_BOX244.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_01"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_01_06" model="account.financial.html.report.line">
+			<field name="name">Total Expenses</field>
+			<field name="code">PH_BOX26</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="6"/>
+			<field name="parent_id" ref="account_financial_report_ph_01"/>
+			<field name="formulas"> balance = PH_BOX261.balance + PH_BOX262.balance + PH_BOX263.balance + PH_BOX264.balance + PH_BOX265.balance + PH_BOX266.balance + PH_BOX267.balance + PH_BOX268.balance + PH_BOX269.balance + PH_BOX26_10.balance + PH_BOX26_11.balance + PH_BOX26_12.balance + PH_BOX26_13.balance + PH_BOX26_14.balance + PH_BOX26_15.balance + PH_BOX26_16.balance + PH_BOX26_17.balance + PH_BOX26_18.balance + PH_BOX26_19.balance + PH_BOX26_20.balance + PH_BOX26_21.balance + PH_BOX26_22.balance + PH_BOX26_23.balance + PH_BOX26_24.balance + PH_BOX26_25.balance + PH_BOX26_26.balance </field>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+			<record id="account_financial_report_ph_01_06_01" model="account.financial.html.report.line">
+				<field name="name">Fund Utilization</field>
+				<field name="code">PH_BOX261</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="1"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_4')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_02" model="account.financial.html.report.line">
+				<field name="name">Salaries and Allowances</field>
+				<field name="code">PH_BOX262</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="2"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_5')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_03" model="account.financial.html.report.line">
+				<field name="name">Fringe Benefits</field>
+				<field name="code">PH_BOX263</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="3"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_6')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_04" model="account.financial.html.report.line">
+				<field name="name">SSS, GSIS, Medicare, HDMF and Other Contributions</field>
+				<field name="code">PH_BOX264</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="4"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_7')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_05" model="account.financial.html.report.line">
+				<field name="name">Commission</field>
+				<field name="code">PH_BOX265</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="5"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_8')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_06" model="account.financial.html.report.line">
+				<field name="name">Advertising</field>
+				<field name="code">PH_BOX266</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="6"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_9')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_07" model="account.financial.html.report.line">
+				<field name="name">Rental</field>
+				<field name="code">PH_BOX267</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="7"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_10')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_08" model="account.financial.html.report.line">
+				<field name="name">Insurance</field>
+				<field name="code">PH_BOX268</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="8"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_11')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_09" model="account.financial.html.report.line">
+				<field name="name">Royalties</field>
+				<field name="code">PH_BOX269</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="9"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_12')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_10" model="account.financial.html.report.line">
+				<field name="name">Repairs and Maintenance</field>
+				<field name="code">PH_BOX26_10</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="10"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_13')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_11" model="account.financial.html.report.line">
+				<field name="name">Representation and Entertainment</field>
+				<field name="code">PH_BOX26_11</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="11"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_14')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_12" model="account.financial.html.report.line">
+				<field name="name">Transportation and Travel</field>
+				<field name="code">PH_BOX26_12</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="12"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_15')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_13" model="account.financial.html.report.line">
+				<field name="name">Fuel and Oil</field>
+				<field name="code">PH_BOX26_13</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="13"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_16')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_14" model="account.financial.html.report.line">
+				<field name="name">Communications, Light and Water</field>
+				<field name="code">PH_BOX26_14</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="14"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_17')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_15" model="account.financial.html.report.line">
+				<field name="name">Supplies</field>
+				<field name="code">PH_BOX26_15</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="15"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_18')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_16" model="account.financial.html.report.line">
+				<field name="name">Interest</field>
+				<field name="code">PH_BOX26_16</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="16"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_19')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_17" model="account.financial.html.report.line">
+				<field name="name">Taxes and Licenses</field>
+				<field name="code">PH_BOX26_17</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="17"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_20')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_18" model="account.financial.html.report.line">
+				<field name="name">Losses</field>
+				<field name="code">PH_BOX26_18</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="18"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_21')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_19" model="account.financial.html.report.line">
+				<field name="name">Bad Debts</field>
+				<field name="code">PH_BOX26_19</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="19"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_22')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_20" model="account.financial.html.report.line">
+				<field name="name">Depreciation</field>
+				<field name="code">PH_BOX26_20</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="20"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_23')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_21" model="account.financial.html.report.line">
+				<field name="name">Amortization of Intangibles</field>
+				<field name="code">PH_BOX26_21</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="21"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_24')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_22" model="account.financial.html.report.line">
+				<field name="name">Depletion</field>
+				<field name="code">PH_BOX26_22</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="22"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_25')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_23" model="account.financial.html.report.line">
+				<field name="name">Charitable Contribution</field>
+				<field name="code">PH_BOX26_23</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="23"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_26')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_24" model="account.financial.html.report.line">
+				<field name="name">Research and Development</field>
+				<field name="code">PH_BOX26_24</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="24"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_27')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_25" model="account.financial.html.report.line">
+				<field name="name">Amortization of Pension Trust Contribution</field>
+				<field name="code">PH_BOX26_25</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="25"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_28')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+
+			<record id="account_financial_report_ph_01_06_26" model="account.financial.html.report.line">
+				<field name="name">Miscellaneous</field>
+				<field name="code">PH_BOX26_26</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="26"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_expense_29')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_01_06"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+		
+		<record id="account_financial_report_ph_01_07" model="account.financial.html.report.line">
+			<field name="name">Net Income/(Loss)</field>
+			<field name="code">PH_BOX27</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="7"/>
+			<field name="formulas">balance = PH_BOX261.balance + PH_BOX262.balance + PH_BOX263.balance + PH_BOX264.balance + PH_BOX265.balance + PH_BOX266.balance + PH_BOX267.balance + PH_BOX268.balance + PH_BOX269.balance + PH_BOX26_10.balance + PH_BOX26_11.balance + PH_BOX26_12.balance + PH_BOX26_13.balance + PH_BOX26_14.balance + PH_BOX26_15.balance + PH_BOX26_16.balance + PH_BOX26_17.balance + PH_BOX26_18.balance + PH_BOX26_19.balance + PH_BOX26_20.balance + PH_BOX26_21.balance + PH_BOX26_22.balance + PH_BOX26_23.balance + PH_BOX26_24.balance + PH_BOX26_25.balance + PH_BOX26_26.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_01"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+	
+		
+	<record id="account_financial_report_ph_02" model="account.financial.html.report.line">
+        <field name="name">Part 3</field>
+        <field name="code">PH_BOX3</field>
+        <field name="level" eval="0"/>
+		<field name="sequence" eval="2"/>
+        <field name="financial_report_id" ref="account_financial_report_l10n_ph"/>
+        <field name="special_date_changer">strict_range</field>
+    </record>
+	
+		<record id="account_financial_report_ph_02_01" model="account.financial.html.report.line">
+			<field name="name">Cash on Hand and in Banks</field>
+			<field name="code">PH_BOX31</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="1"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_1')])]"/>
+			<field name="formulas">balance = - sum.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_02" model="account.financial.html.report.line">
+			<field name="name">Marketable Securities</field>
+			<field name="code">PH_BOX32</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="2"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_2')])]"/>
+			<field name="formulas">balance = - sum.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_03" model="account.financial.html.report.line">
+			<field name="name">Accounts Receivable - Trade</field>
+			<field name="code">PH_BOX33</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="3"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_3')])]"/>
+			<field name="formulas">balance = - sum.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+			<record id="account_financial_report_ph_02_03_01" model="account.financial.html.report.line">
+				<field name="name">Less: Allowance for Bad Debts</field>
+				<field name="code">PH_BOX331</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="1"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_4')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_03"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+		
+		<record id="account_financial_report_ph_02_04" model="account.financial.html.report.line">
+			<field name="name">Net Accounts Receivable - Trade</field>
+			<field name="code">PH_BOX34</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="4"/>
+			<field name="formulas">balance = PH_BOX33.balance + PH_BOX331.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+	
+		<record id="account_financial_report_ph_02_05" model="account.financial.html.report.line">
+			<field name="name">Other Receivables</field>
+			<field name="code">PH_BOX35</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="5"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_5')])]"/>
+			<field name="formulas">balance = - sum.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+			
+			<record id="account_financial_report_ph_02_05_01" model="account.financial.html.report.line">
+				<field name="name">Finished Goods/ Merchandise</field>
+				<field name="code">PH_BOX351</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="1"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_6')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_05"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+		
+			<record id="account_financial_report_ph_02_05_02" model="account.financial.html.report.line">
+				<field name="name">Goods in Process</field>
+				<field name="code">PH_BOX352</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="2"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_7')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_05"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+			<record id="account_financial_report_ph_02_05_03" model="account.financial.html.report.line">
+				<field name="name">Raw Materials</field>
+				<field name="code">PH_BOX353</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="3"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_8')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_05"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+			<record id="account_financial_report_ph_02_05_04" model="account.financial.html.report.line">
+				<field name="name">Supplies</field>
+				<field name="code">PH_BOX354</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="4"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_9')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_05"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+		<record id="account_financial_report_ph_02_06" model="account.financial.html.report.line">
+			<field name="name">Total Inventory</field>
+			<field name="code">PH_BOX36</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="6"/>
+			<field name="formulas">balance = PH_BOX351.balance + PH_BOX352.balance + PH_BOX353.balance + PH_BOX354.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+
+		<record id="account_financial_report_ph_02_07" model="account.financial.html.report.line">
+			<field name="name">Prepayments</field>
+			<field name="code">PH_BOX37</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="7"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_10')])]"/>
+			<field name="formulas">balance = - sum.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_08" model="account.financial.html.report.line">
+			<field name="name">Total Current Assets</field>
+			<field name="code">PH_BOX38</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="8"/>
+			<field name="formulas">balance = PH_BOX31.balance + PH_BOX32.balance + PH_BOX34.balance + PH_BOX35.balance + PH_BOX36.balance + PH_BOX37.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_09" model="account.financial.html.report.line">
+			<field name="name">Long-Term Investments</field>
+			<field name="code">PH_BOX39</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="9"/>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+			<record id="account_financial_report_ph_02_09_01" model="account.financial.html.report.line">
+				<field name="name">Stocks and Bonds</field>
+				<field name="code">PH_BOX391</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="1"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_11')])]"/>
+				<field name="formulas">balance = - sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_09"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+			<record id="account_financial_report_ph_02_09_02" model="account.financial.html.report.line">
+				<field name="name">Real Estate</field>
+				<field name="code">PH_BOX392</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="2"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_12')])]"/>
+				<field name="formulas">balance = - sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_09"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+			<record id="account_financial_report_ph_02_09_03" model="account.financial.html.report.line">
+				<field name="name">Others</field>
+				<field name="code">PH_BOX393</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="3"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_13')])]"/>
+				<field name="formulas">balance = - sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_09"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+		<record id="account_financial_report_ph_02_10" model="account.financial.html.report.line">
+			<field name="name">Total Long-Term Investments</field>
+			<field name="code">PH_BOX3_10</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="10"/>
+			<field name="formulas">balance = PH_BOX391.balance + PH_BOX392.balance + PH_BOX393.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_11" model="account.financial.html.report.line">
+			<field name="name">Fixed Tangible Assets</field>
+			<field name="code">PH_BOX3_11</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="11"/>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_12" model="account.financial.html.report.line">
+			<field name="name">Land</field>
+			<field name="code">PH_BOX3_12</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="12"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_14')])]"/>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="formulas">balance = - sum.balance</field>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_13" model="account.financial.html.report.line">
+			<field name="name">Building</field>
+			<field name="code">PH_BOX3_13</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="13"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_15')])]"/>
+			<field name="formulas">balance = - sum.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+			<record id="account_financial_report_ph_02_13_01" model="account.financial.html.report.line">
+				<field name="name">Less: Accumulated Depreciation</field>
+				<field name="code">PH_BOX3_13_1</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="1"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_16')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_13"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+		<record id="account_financial_report_ph_02_14" model="account.financial.html.report.line">
+			<field name="name">Net Book Value - Building</field>
+			<field name="code">PH_BOX3_14</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="14"/>
+			<field name="formulas">balance = PH_BOX3_13.balance + PH_BOX3_13_1.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_15" model="account.financial.html.report.line">
+			<field name="name">Other Depreciable Assets</field>
+			<field name="code">PH_BOX3_15</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="15"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_17')])]"/>
+			<field name="formulas">balance = - sum.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+			<record id="account_financial_report_ph_02_15_01" model="account.financial.html.report.line">
+				<field name="name">Less: Accumulated Depreciation</field>
+				<field name="code">PH_BOX3_15_1</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="1"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_18')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_15"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+		
+		<record id="account_financial_report_ph_02_16" model="account.financial.html.report.line">
+			<field name="name">Net Book Value-Other Depreciable Assets</field>
+			<field name="code">PH_BOX3_16</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="16"/>
+			<field name="formulas">balance = PH_BOX3_15.balance + PH_BOX3_15_1.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_17" model="account.financial.html.report.line">
+			<field name="name">Fixed Asset - Appraisal Increase</field>
+			<field name="code">PH_BOX3_17</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="17"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_19')])]"/>
+			<field name="formulas">balance = - sum.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+			<record id="account_financial_report_ph_02_17_01" model="account.financial.html.report.line">
+				<field name="name">Less: Accumulated Depreciation</field>
+				<field name="code">PH_BOX3_17_1</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="1"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_20')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_17"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+		<record id="account_financial_report_ph_02_18" model="account.financial.html.report.line">
+			<field name="name">Net Book Value-Fixed Asset-Appraisal Increase</field>
+			<field name="code">PH_BOX3_18</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="18"/>
+			<field name="formulas">balance = PH_BOX3_17.balance + PH_BOX3_17_1.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_19" model="account.financial.html.report.line">
+			<field name="name">Total Fixed Tangible Assets</field>
+			<field name="code">PH_BOX3_19</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="19"/>
+			<field name="formulas">balance = PH_BOX3_12.balance + PH_BOX3_14.balance + PH_BOX3_16.balance + PH_BOX3_18.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_20" model="account.financial.html.report.line">
+			<field name="name">Intangible Assets</field>
+			<field name="code">PH_BOX3_20</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="20"/>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_21" model="account.financial.html.report.line">
+			<field name="name">Intangibles</field>
+			<field name="code">PH_BOX3_21</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="21"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_21')])]"/>
+			<field name="formulas">balance = - sum.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_22" model="account.financial.html.report.line">
+			<field name="name">Other Assets</field>
+			<field name="code">PH_BOX3_22</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="22"/>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_23" model="account.financial.html.report.line">
+			<field name="name">Other Assets</field>
+			<field name="code">PH_BOX3_23</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="23"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_asset_22')])]"/>
+			<field name="formulas">balance = - sum.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_24" model="account.financial.html.report.line">
+			<field name="name">Total Assets</field>
+			<field name="code">PH_BOX3_24</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="24"/>
+			<field name="formulas">balance = PH_BOX38.balance + PH_BOX3_10.balance + PH_BOX3_19.balance + PH_BOX3_21.balance + PH_BOX3_23.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_25" model="account.financial.html.report.line">
+			<field name="name">Current Liabilities</field>
+			<field name="code">PH_BOX3_25</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="25"/>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="financial_report_id" ref="account_financial_report_l10n_ph"/>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+			<record id="account_financial_report_ph_02_25_01" model="account.financial.html.report.line">
+				<field name="name">Accounts Payable - Trade</field>
+				<field name="code">PH_BOX3_25_1</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="1"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_liability_1')])]"/>
+				<field name="formulas">balance = - sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_25"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+			<record id="account_financial_report_ph_02_25_02" model="account.financial.html.report.line">
+				<field name="name">Other Payables</field>
+				<field name="code">PH_BOX3_25_2</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="2"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_liability_2')])]"/>
+				<field name="formulas">balance = - sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_25"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+		<record id="account_financial_report_ph_02_26" model="account.financial.html.report.line">
+			<field name="name">Total Current Liabilities</field>
+			<field name="code">PH_BOX3_26</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="26"/>
+			<field name="formulas">balance = PH_BOX3_25_1.balance + PH_BOX3_25_2.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="financial_report_id" ref="account_financial_report_l10n_ph"/>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_27" model="account.financial.html.report.line">
+			<field name="name">Long Term Liabilities</field>
+			<field name="code">PH_BOX3_27</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="27"/>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="financial_report_id" ref="account_financial_report_l10n_ph"/>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_28" model="account.financial.html.report.line">
+			<field name="name">Long Term Debts</field>
+			<field name="code">PH_BOX3_28</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="28"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_liability_3')])]"/>
+			<field name="formulas">balance = - sum.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="show_domain">never</field>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_29" model="account.financial.html.report.line">
+			<field name="name">Deferred Credits / Other Liabilities </field>
+			<field name="code">PH_BOX3_29</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="29"/>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_liability_4')])]"/>
+			<field name="financial_report_id" ref="account_financial_report_l10n_ph"/>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_30" model="account.financial.html.report.line">
+			<field name="name">Total Liabilities</field>
+			<field name="code">PH_BOX3_30</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="30"/>
+			<field name="balance">balance = PH_BOX_3_26.balance + PH_BOX3_28.balance + PH_BOX3_29.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="financial_report_id" ref="account_financial_report_l10n_ph"/>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+		<record id="account_financial_report_ph_02_31" model="account.financial.html.report.line">
+			<field name="name">Stockholder's Equity</field>
+			<field name="code">PH_BOX3_31</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="31"/>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="financial_report_id" ref="account_financial_report_l10n_ph"/>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+			<record id="account_financial_report_ph_02_31_01" model="account.financial.html.report.line">
+				<field name="name">Capital Stock</field>
+				<field name="code">PH_BOX3_31_01</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="1"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_equity_1')])]"/>
+				<field name="formulas">balance = - sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_31"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+			<record id="account_financial_report_ph_02_31_02" model="account.financial.html.report.line">
+				<field name="name">Premium (Discount) on Capital Stock</field>
+				<field name="code">PH_BOX3_31_02</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="2"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_equity_2')])]"/>
+				<field name="formulas">balance = - sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_31"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+			<record id="account_financial_report_ph_02_31_03" model="account.financial.html.report.line">
+				<field name="name">Retained Earnings</field>
+				<field name="code">PH_BOX3_31_03</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="3"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_equity_3')])]"/>
+				<field name="formulas">balance = - sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_31"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+			<record id="account_financial_report_ph_02_31_04" model="account.financial.html.report.line">
+				<field name="name">Appraisal Capital</field>
+				<field name="code">PH_BOX3_31_04</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="4"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_equity_4')])]"/>
+				<field name="formulas">balance = - sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_31"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+			<record id="account_financial_report_ph_02_31_05" model="account.financial.html.report.line">
+				<field name="name">Donated Capital</field>
+				<field name="code">PH_BOX3_31_05</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="5"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_equity_5')])]"/>
+				<field name="formulas">balance = - sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_31"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+			<record id="account_financial_report_ph_02_31_06" model="account.financial.html.report.line">
+				<field name="name">Treasury Stock</field>
+				<field name="code">PH_BOX3_31_06</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="6"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_equity_6')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_31"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+			<record id="account_financial_report_ph_02_31_07" model="account.financial.html.report.line">
+				<field name="name">Total Stockholder's Equity</field>
+				<field name="code">PH_BOX3_31_07</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="7"/>
+				<field name="formulas">balance = PH_BOX3_31_01.balance + PH_BOX3_31_02.balance + PH_BOX3_31_03.balance + PH_BOX3_31_04.balance + PH_BOX3_31_05.balance + PH_BOX3_31_06.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_31"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+			<record id="account_financial_report_ph_02_31_08" model="account.financial.html.report.line">
+				<field name="name">Partners' Equity</field>
+				<field name="code">PH_BOX3_31_08</field>
+				<field name="level" eval="2"/>
+				<field name="sequence" eval="8"/>
+				<field name="domain" eval="[('tax_line_id.tag_ids', 'in', [ref('l10n_ph.tag_account_account_equity_7')])]"/>
+				<field name="formulas">balance = sum.balance</field>
+				<field name="parent_id" ref="account_financial_report_ph_02_31"/>
+				<field name="show_domain">never</field>
+				<field name="special_date_changer">strict_range</field>
+			</record>
+			
+		<record id="account_financial_report_ph_02_32" model="account.financial.html.report.line">
+			<field name="name">Total Liabilities and Stockholders'/Partners' Equity</field>
+			<field name="code">PH_BOX3_32</field>
+			<field name="level" eval="1"/>
+			<field name="sequence" eval="31"/>
+			<field name="formulas">balance = PH_BOX3_30.balance + PH_BOX3_31_07.balance + PH_BOX3_31_08.balance</field>
+			<field name="parent_id" ref="account_financial_report_ph_02"/>
+			<field name="financial_report_id" ref="account_financial_report_l10n_ph"/>
+			<field name="special_date_changer">strict_range</field>
+		</record>
+		
+</odoo>
